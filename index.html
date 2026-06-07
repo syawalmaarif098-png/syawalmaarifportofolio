@@ -1,48 +1,140 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toko UMKM Syawal</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Mahasiswa IT</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan Font Google: Poppins & JetBrains Mono (untuk vibes coding) -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Icon Library (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Toko UMKM Syawal</h1>
-    <p>Produk lokal berkualitas dengan harga terjangkau</p>
-  </header>
 
-  <main>
-    <section class="produk">
-      <h2>Daftar Produk</h2>
-      <div class="katalog">
-        <div class="item">
-          <img src="https://via.placeholder.com/150" alt="Produk 1">
-          <h3>Kopi Sumatra</h3>
-          <p>Rp 50.000</p>
-          <button onclick="beli('Kopi Sumatra')">Beli</button>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">&lt;DevPortfolio /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/150" alt="Produk 2">
-          <h3>Keripik Balado</h3>
-          <p>Rp 25.000</p>
-          <button onclick="beli('Keripik Balado')">Beli</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3>Halo, Saya <span class="highlight">NAMA ANDA</span></h3>
+            <h1>Mahasiswa <span id="typing-text"></span><span class="cursor">|</span></h1>
+            <p>Mengubah ide menjadi solusi digital yang elegan. Fokus pada pengembangan web dan pemrograman.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary">Lihat Proyek</a>
+                <a href="#contact" class="btn secondary">Hubungi Saya</a>
+            </div>
         </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/150" alt="Produk 3">
-          <h3>Rendang Kaleng</h3>
-          <p>Rp 80.000</p>
-          <button onclick="beli('Rendang Kaleng')">Beli</button>
+        <div class="hero-visual">
+            <!-- Animasi Bentuk Geometris Sederhana -->
+            <div class="circle"></div>
+            <div class="circle-small"></div>
         </div>
-      </div>
     </section>
-    <p id="pesan"></p>
-  </main>
 
-  <footer>
-    <p>&copy; 2026 Toko UMKM Syawal</p>
-  </footer>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Pendidikan</h3>
+                    <p>Mahasiswa Teknik Informatika di [Nama Universitas]. Tertarik dengan algoritma dan struktur data.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Skill Tech</h3>
+                    <p>HTML/CSS, JavaScript, Python, Java, Node.js, Git, dan SQL.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Minat</h3>
+                    <p>UI/UX Design, Cyber Security, dan Artificial Intelligence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Proyek Terbaru</h2>
+            <div class="project-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="card-image project-1"></div>
+                    <div class="card-content">
+                        <h3>Aplikasi Kasir Digital</h3>
+                        <p>Aplikasi berbasis Python untuk manajemen toko menggunakan GUI dan database SQLite.</p>
+                        <div class="tags">
+                            <span>Python</span><span>SQLite</span>
+                        </div>
+                        <a href="#" class="btn-link">Lihat Kode <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="card-image project-2"></div>
+                    <div class="card-content">
+                        <h3>Sistem Informasi Akademik</h3>
+                        <p>Website responsive untuk melihat jadwal kuliah dan nilai mahasiswa.</p>
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>PHP</span>
+                        </div>
+                        <a href="#" class="btn-link">Lihat Kode <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="card-image project-3"></div>
+                    <div class="card-content">
+                        <h3>Portfolio Pribadi</h3>
+                        <p>Portofolio statis yanganda lihat saat ini dengan desain modern.</p>
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <a href="#" class="btn-link">Lihat Kode <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Ayo Berdiskusi</h2>
+            <div class="contact-wrapper">
+                <p>Interested to collaborate? or just want to say hi?</p>
+                <a href="mailto:emailkamu@student.ac.id" class="btn primary">Kirim Email</a>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built with <i class="fas fa-heart"></i> by [Nama Anda]</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

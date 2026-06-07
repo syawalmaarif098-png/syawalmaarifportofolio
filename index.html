@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio | Mahasiswa IT</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Menggunakan Font Google: Poppins & JetBrains Mono (untuk vibes coding) -->
+    <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Icon Library (FontAwesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -18,7 +18,6 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">Tentang</a></li>
-            <li><a href="#projects">Proyek</a></li>
             <li><a href="#contact">Kontak</a></li>
         </ul>
         <div class="menu-toggle" id="mobile-menu">
@@ -31,18 +30,31 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h3>Halo, Saya <span class="highlight">Syawal Maarif Indrajati Zulvi</span></h3>
-            <h1>Mahasiswa  <span id="typing-text"></span><span class="cursor">|</span></h1>
-            <p>Mengubah ide menjadi solusi digital yang elegan. Fokus pada pengembangan web dan pemrograman.</p>
+            <div class="greeting">Halo, Saya</div>
+            <h1><span class="highlight">Syawal Maarif Indrajati Zulvi</span></h1>
+            <h2 class="typing-wrapper">Saya Seorang <span id="typing-text"></span><span class="cursor">|</span></h2>
+            <p class="hero-desc">Mahasiswa Teknik Informatika yang passionate dalam pengembangan web, UI/UX Design, dan teknologi terkini. Siap mengubah ide menjadi solusi digital yang bermakna.</p>
+            
             <div class="cta-buttons">
-                <a href="#projects" class="btn primary">Lihat Proyek</a>
-                <a href="#contact" class="btn secondary">Hubungi Saya</a>
+                <a href="#contact" class="btn primary">Hubungi Saya</a>
+                <a href="#about" class="btn secondary">Tentang Saya</a>
+            </div>
+            
+            <!-- Social Links Hero -->
+            <div class="hero-social">
+                <a href="https://github.com/username-kamu" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/username-kamu" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/username-kamu" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
+        
         <div class="hero-visual">
-            <!-- Animasi Bentuk Geometris Sederhana -->
-            <div class="circle"></div>
-            <div class="circle-small"></div>
+            <div class="coding-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
         </div>
     </section>
 
@@ -50,65 +62,54 @@
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">Tentang Saya</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Pendidikan</h3>
-                    <p>Mahasiswa Teknik Informatika di Universitas Negeri Padang. Tertarik dengan algoritma dan struktur data.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Skill Tech</h3>
-                    <p>HTML/CSS, JavaScript, Python, Java, Node.js, Git, dan SQL.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Minat</h3>
-                    <p>UI/UX Design, Cyber Security, dan Artificial Intelligence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Proyek Terbaru</h2>
-            <div class="project-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card">
-                    <div class="card-image project-1"></div>
-                    <div class="card-content">
-                        <h3>Aplikasi Kasir Digital</h3>
-                        <p>Aplikasi berbasis Python untuk manajemen toko menggunakan GUI dan database SQLite.</p>
-                        <div class="tags">
-                            <span>Python</span><span>SQLite</span>
-                        </div>
-                        <a href="#" class="btn-link">Lihat Kode <i class="fab fa-github"></i></a>
+            
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <i class="fas fa-user"></i>
                     </div>
                 </div>
-                <!-- Project Card 2 -->
-                <div class="project-card">
-                    <div class="card-image project-2"></div>
-                    <div class="card-content">
-                        <h3>Sistem Informasi Akademik</h3>
-                        <p>Website responsive untuk melihat jadwal kuliah dan nilai mahasiswa.</p>
-                        <div class="tags">
-                            <span>HTML</span><span>CSS</span><span>PHP</span>
+                
+                <div class="about-content">
+                    <h3>Mahasiswa IT & Web Developer</h3>
+                    <p>Saya adalah mahasiswa semester 2 di Teknik Informatika. Saya memiliki minat besar dalam dunia pemrograman dan teknologi digital. Dengan dasar pengetahuan yang saya dapat dari kuliah dan pembelajaran mandiri, saya berusaha menciptakan solusi teknologi yang berguna.</p>
+                    
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <strong>Pendidikan</strong>
+                                <span>Teknik Informatika<br>Universitas Negeri Padang</span>
+                            </div>
                         </div>
-                        <a href="#" class="btn-link">Lihat Kode <i class="fab fa-github"></i></a>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Lokasi</strong>
+                                <span>Sumatra Barat, Indonesia</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Ketersediaan</strong>
+                                <span>Tersedia untuk Magang & Freelance</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="project-card">
-                    <div class="card-image project-3"></div>
-                    <div class="card-content">
-                        <h3>Portfolio Pribadi</h3>
-                        <p>Portofolio statis yanganda lihat saat ini dengan desain modern.</p>
-                        <div class="tags">
-                            <span>HTML</span><span>CSS</span><span>JS</span>
+                    
+                    <div class="skills">
+                        <h4>Keterampilan</h4>
+                        <div class="skill-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>Node.js</span>
+                            <span>Git</span>
+                            <span>SQL</span>
                         </div>
-                        <a href="#" class="btn-link">Lihat Kode <i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -118,21 +119,88 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Ayo Berdiskusi</h2>
-            <div class="contact-wrapper">
-                <p>Interested to collaborate? or just want to say hi?</p>
-                <a href="mailto:emailkamu@student.ac.id" class="btn primary">Kirim Email</a>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+            <h2 class="section-title">Hubungi Saya</h2>
+            <p class="section-subtitle">Punya pertanyaan atau ingin bekerja sama? Silakan hubungi saya  di bawah ini!</p>
+            
+            <div class="contact-grid">
+                <!-- Email Card -->
+                <a href="mailto:emailkamu@student.ac.id" class="contact-card email">
+                    <div class="icon-box">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Email</h3>
+                        <p>emailkamu@student.ac.id</p>
+                    </div>
+                </a>
+                
+                <!-- WhatsApp Card -->
+                <a href="https://wa.me/82351886083" target="_blank" class="contact-card whatsapp">
+                    <div class="icon-box">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>WhatsApp</h3>
+                        <p>+62 823 5188 6083</p>
+                    </div>
+                </a>
+                
+                <!-- Instagram Card -->
+                <a href="https://www.instagram.com/_arifzulvi" target="_blank" class="contact-card instagram">
+                    <div class="icon-box">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Instagram</h3>
+                        <p>@_arifzulvi</p>
+                    </div>
+                </a>
+                
+                <!-- Facebook Card -->
+                <a href="https://web.facebook.com/syawal.zulvi" target="_blank" class="contact-card facebook">
+                    <div class="icon-box">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Facebook</h3>
+                        <p>Syawal Zulvi</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Location / Google Maps -->
+            <div class="location-wrapper">
+                <h3><i class="fas fa-map-pin"></i> Lokasi Saya</h3>
+                <p>Sebukar,Kec. Tanah Cogok, Kabupaten Kerinci, Jambi</p>
+                <div class="map-container">
+                    <!-- GANTI IFRAME DI BAWAH DENGAN LOKASI GOOGLE MAPS ANDA -->
+                    <!-- Cara mendapatkan: Buka Google Maps -> Klik Share -> Embed a map -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d565.2550074709952!2d101.45469007852132!3d-2.0967492324725856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1780838060115!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>Built with <i class="fas fa-heart"></i> by Syawal Maarif Indrajati Zulvi</p>
+        <div class="footer-content">
+            <div class="footer-logo">&lt;DevPortfolio /&gt;</div>
+            <p>Terima kasih telah mengunjungi portofolio saya.</p>
+            <div class="footer-social">
+                <a href="https://github.com/syawalmaarif098-png" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/username-kamu" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/_arifzulvi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.facebook.com/syawal.zulvi" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> NAMA ANDA. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

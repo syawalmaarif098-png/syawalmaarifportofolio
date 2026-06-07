@@ -1,12 +1,14 @@
-// Script untuk Portofolio Mahasiswa IT
+// ========================================
+// PORTFOLIO SCRIPT - MAHASISWA IT
+// ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
     
     // ---------------------------------------------------------
-    // 1. EFEK KETIK (TYPEWRITER) UNTUK HERO SECTION
+    // 1. TYPEWRITER EFFECT (EFEK KETIKAN)
     // ---------------------------------------------------------
     const textElement = document.getElementById('typing-text');
-    const texts = ["Informatika", "Developer", "Mahasiswa IT", "Coder"];
+    const texts = ["Mahasiswa IT", "Web Developer", "Coding Enthusiast", "Tech Learner"];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -18,41 +20,42 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isDeleting) {
             textElement.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50; // Hapus lebih cepat
+            typeSpeed = 50;
         } else {
             textElement.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 100; // Ketik normal
+            typeSpeed = 100;
         }
 
         if (!isDeleting && charIndex === currentText.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Jeda sebelum hapus
+            typeSpeed = 2000;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
-            typeSpeed = 500; // Jeda sebelum lanjut kata berikutnya
+            typeSpeed = 500;
         }
 
         setTimeout(typeWriter, typeSpeed);
     }
 
-    // Jalankan efek ketik
     typeWriter();
 
 
     // ---------------------------------------------------------
-    // 2. NAVBAR SCROLL EFFECT (UBAH BACKGROUND SAAT SCROLL)
+    // 2. NAVBAR SCROLL EFFECT
     // ---------------------------------------------------------
     const navbar = document.querySelector('.navbar');
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
+            navbar.style.padding = '1rem 5%';
         } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.9)';
+            navbar.style.background = 'rgba(10, 10, 10, 0.85)';
             navbar.style.boxShadow = 'none';
+            navbar.style.padding = '1.2rem 5%';
         }
     });
 
@@ -65,37 +68,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        
-        // Animasi hamburger menjadi X
-        const bars = document.querySelectorAll('.bar');
-        bars.forEach(bar => bar.classList.toggle('change'));
+        mobileMenu.classList.toggle('active');
     });
 
     // Tutup menu saat link diklik
-    document.querySelectorAll('.nav-links li a').forEach(link => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            const bars = document.querySelectorAll('.bar');
-            bars.forEach(bar => bar.classList.remove('change'));
+            mobileMenu.classList.remove('active');
         });
     });
 
 
     // ---------------------------------------------------------
-    // 4. SMOOTH SCROLLING UNTUK ANCHOR LINKS
+    // 4. SMOOTH SCROLL
     // ---------------------------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
             if(targetId === '#') return;
 
             const targetSection = document.querySelector(targetId);
             if(targetSection) {
                 const navbarHeight = navbar.offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
-                
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -106,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ---------------------------------------------------------
-    // 5. REVEAL ON SCROLL (ELEMEN MUNCUL SAAT DISCROLL)
+    // 5. REVEAL ON SCROLL (ANIMASI MUNCUL)
     // ---------------------------------------------------------
     const observerOptions = {
         threshold: 0.1,
@@ -122,16 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Amati elemen yang ingin dianimate
-    const animateElements = document.querySelectorAll('.about-card, .project-card');
+    const animateElements = document.querySelectorAll('.about-card, .contact-card, .about-image, .location-wrapper');
     animateElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
+        el.style.transform = 'translateY(40px)';
         el.style.transition = 'all 0.6s ease-out';
         observer.observe(el);
     });
 
-    // Tambahkan kelas visible untuk animasi
+    // Inject style for visible class
     const style = document.createElement('style');
     style.textContent = `
         .visible {
@@ -145,26 +141,83 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------------------------------------------
     // 6. TANGGAL OTOMATIS DI FOOTER
     // ---------------------------------------------------------
-    const yearElement = document.querySelector('footer p');
-    if(yearElement) {
-        const currentYear = new Date().getFullYear();
-        yearElement.innerHTML = yearElement.innerHTML.replace('[Nama Anda]', `Nama Anda &copy; ${currentYear}`);
+    const yearSpan = document.getElementById('year');
+    if(yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 
-
+    
     // ---------------------------------------------------------
-    // 7. KONFIRMASI SEBELUM KIRIM EMAIL (OPSIONAL)
+    // 7. ACTIVE LINK ON SCROLL
     // ---------------------------------------------------------
-    const emailBtn = document.querySelector('.contact-wrapper .btn.primary');
-    if(emailBtn) {
-        emailBtn.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if(href && href.includes('mailto:')) {
-                // Biarkan membuka mail client
-                console.log('Membuka mail client...');
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if(window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
             }
         });
-    }
 
-    console.log("Portofolio loaded successfully! 🚀");
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+
+    // ---------------------------------------------------------
+    // 8. CUSTOM CURSOR (OPSIONAL - JIKA INGIN)
+    // ---------------------------------------------------------
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    const cursorStyle = document.createElement('style');
+    cursorStyle.textContent = `
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+        .custom-cursor.hovered {
+            transform: scale(2);
+            opacity: 0;
+        }
+    `;
+    document.head.appendChild(cursorStyle);
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX - 10 + 'px';
+        document.addEventListener('mouseover', (e) => {
+            if(e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+                cursor.classList.add('hovered');
+            }
+        });
+    });
+
+
+    // ---------------------------------------------------------
+    // 9. KONFIRMASI LINK EXTERNAL
+    // ---------------------------------------------------------
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            console.log('Membuka link eksternal: ' + this.href);
+        });
+    });
+
+    console.log("✅ Portofolio Loaded Successfully!");
+    console.log("🚀 Dibuat dengan ❤️ untuk Portofolio Mahasiswa IT");
 });
